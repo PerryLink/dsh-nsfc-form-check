@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-008",
+  "purpose": "电子文档属性中的「最后修改者」不应含申请人姓名",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-008-compliant.json",
+      "expect": {
+        "ruleId": "NF-008",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-008-unsafe.json",
+      "expect": {
+        "ruleId": "NF-008",
+        "count": 1
+      }
+    }
+  ]
+}

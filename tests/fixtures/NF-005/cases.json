@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-005",
+  "purpose": "电子文档属性中的标题不应含身份信息",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-005-compliant.json",
+      "expect": {
+        "ruleId": "NF-005",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-005-unsafe.json",
+      "expect": {
+        "ruleId": "NF-005",
+        "count": 1
+      }
+    }
+  ]
+}

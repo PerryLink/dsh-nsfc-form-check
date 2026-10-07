@@ -1,0 +1,26 @@
+{
+  "text": "封面：张伟\n第二行\n第三行\n正文开始\n本研究由张伟负责。",
+  "metadata": {},
+  "roster": {
+    "authorNames": [
+      "张伟"
+    ],
+    "institutionNames": [
+      "示例大学",
+      "示例大学附属第一医院"
+    ],
+    "advisorNames": [
+      "李建国"
+    ],
+    "allowList": []
+  },
+  "configure": {
+    "NF-013": {
+      "patchedSections": [
+        "张伟"
+      ],
+      "scopeFromLine": 4,
+      "scopeToLine": 5
+    }
+  }
+}

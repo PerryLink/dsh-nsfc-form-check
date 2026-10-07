@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-012",
+  "purpose": "声明为重复或延续申请时应包含披露说明（标记词与披露内容均由本机构配置）",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-012-compliant.json",
+      "expect": {
+        "ruleId": "NF-012",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-012-unsafe.json",
+      "expect": {
+        "ruleId": "NF-012",
+        "count": 1
+      }
+    }
+  ]
+}

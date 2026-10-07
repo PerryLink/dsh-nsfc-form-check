@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-002",
+  "purpose": "正文中不应出现申请人姓名（条例第二十四条保密要求的原则性推论）",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-002-compliant.json",
+      "expect": {
+        "ruleId": "NF-002",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-002-unsafe.json",
+      "expect": {
+        "ruleId": "NF-002",
+        "count": 1
+      }
+    }
+  ]
+}

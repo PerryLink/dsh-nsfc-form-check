@@ -1,0 +1,306 @@
+# 基金申请书形式审查与匿名化 规则库
+#
+# 规则数据与代码分离：替换本文件即可切换规则集版本，无需改动 TypeScript。
+#
+# 条款引用纪律（由 shared/ruleset.ts 强制校验）：
+#   - 每条规则必须写全 document / number / clause / excerpt / kind / source，
+#     且 excerpt 必须是逐字摘录，不得改写。
+#   - kind: direct                       条款直接规定了所检查的要求
+#   - kind: derived-from-principle       条款未直接规定，仅能由原则性条款推论（severity 最多 warn）
+#   - kind: institutional-configuration 阈值出自本机构配置或当年指南（severity 最多 info）
+#
+# ⚠️ 版本提示：《国家自然科学基金条例》已于 2024-11-08 由国务院令第796号修订，2025-01-01 施行，
+#    原国务院令第487号（2007）版本已被修订。本规则库**只按 796 号版本的条号引用**；
+#    条号与 487 号版本不同（例如保密条款在 796 号版本是第二十一条，不是原第二十四条）。
+#
+# ⚠️⚠️ 最重要的一条边界：**匿名化检查没有法源**。
+#    ⚠️ **本条判断已于 2026-10-07 按现行版本（796 号）重新核对，见
+#    rules/evidence/clause-verification-nsfc-regulation.md**，结论成立，但**证据强度要如实标注**：
+#    · **现行第二十条（回避）逐字**：「……（三）**评审专家与申请人、参与者属于同一法人单位的**。」
+#      ⇒ 该制度要求按"**是否同一法人单位**"判断回避，**以"知道申请人单位"为前提** ——
+#      **匿名评审与这一条不相容**，从制度设计上反证"匿名评审"不成立。
+#    · **第十二条**要求"**通过依托单位**向基金管理机构提出书面申请"；
+#      **第十五条**规定"从同行专家库中**随机选择 3 名以上专家**进行**通讯评审**"，
+#      即评审方式为**同行通讯评审 + 会议评审**，**不是匿名评审**。
+#    · ⚠️ **限度说明（必须保留）**：上述结论来自**通读七章四十五条未见相关规定 + 制度反证**，
+#      **不是"全文检索确认'匿名'二字为零"** —— 本次抓取到的是结构化正文，不便做"全文不含某词"的否定证明。
+#      **不要把本条读成"已检索证明"**。
+#    · 另需说明：头部原先并列引用的《2026 年度项目指南·申请规定》与《2019 年度项目指南》，
+#      **本次仍未取得全文**，故那两份的"未见规定"未重新核对。
+#    → 因此本规则库的 NF-002~NF-009、NF-013 **全部是提示，不是判定**，措辞一律写作"身份线索词"，
+#      绝不写"不得出现姓名"，也绝不作阻断。使用方若把它当硬性规则用，是本插件被误用。
+#    → 反过来，2026 年度《申请规定》**要求**如实填写导师姓名，故 NF-014 是**反向检查**（防漏填）。
+#
+# 其余三条边界（均已逐字核验）：
+#   1. 条例第十三条列举了**初审不予受理**的四种情形，是形式审查最硬的依据（NF-010、NF-015 引用）。
+#   2. 页数/字数限额、限项细则、包干制范围、年度不予受理情形**逐年变化且按项目类型不同**，
+#      全部以空配置出厂：未配置时进 skipped，不静默通过，也不硬编码任何年度数值。
+#   3. 电子文档属性（作者/单位/最后修改者）不得含身份信息属**技术性建议**，
+#      现行国家文件中**没有**任何禁止性规定，且基金委流程本身要求上传含署名的简历与代表作。
+
+plugin: dsh-nsfc-form-check
+version: "2026.1"
+
+rules:
+  - id: NF-001
+    title: 身份线索词名单未配置时，相关检查无法执行
+    severity: warn
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    note: >-
+      本条是元规则：未配置任何身份线索词时，其余相关检查无法执行，本条把这件事显式报出来，
+      避免"没查出问题"被读成"没有问题"。名单属于机构配置，不随插件分发。
+
+  - id: NF-002
+    title: 正文中出现申请人姓名（提示，非法定要求）
+    severity: warn
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      roster: authorNames
+    note: >-
+      **重要：未找到任何现行明文**要求申请书不得出现申请人姓名（条例全文、2026 年度申请规定全文、
+      2019 年度指南全文均无此表述）。本条只是把"正文里出现了申请人姓名"这一事实摆出来供人工判断，
+      属**技术性提示**，不是法定要求，也不代表材料存在问题。
+      逐字匹配，同姓同名、常见姓氏、引用他人姓名都可能命中；allowList 用于配置命中也不报的例外词。
+
+  - id: NF-003
+    title: 正文中出现依托单位名称（提示，非法定要求）
+    severity: warn
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    note: >-
+      同 NF-002：**无明文依据**，属技术性提示。单位名称常以院系、实验室、附属医院等变体出现，
+      建议把常见简写一并填入 institutionNames。
+
+  - id: NF-004
+    title: 正文中出现导师姓名（提示，且与现行指南要求相反的场景需区分）
+    severity: warn
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    note: >-
+      同 NF-002：**无明文依据**，属技术性提示。特别注意：年度指南**要求如实填写导师姓名**（见 NF-014），
+      因此本条命中绝不意味着材料有误；本条只用于人工判断某处提及是否构成身份线索。
+
+  - id: NF-005
+    title: 电子文档属性中的标题含身份线索词（技术性提示）
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    note: >-
+      文档属性随文件流转，阅读器中不一定直接可见。现行国家文件**未明文列举"电子文档属性/元数据"**，
+      本条属技术性提示，建议清理，但不是合规判定。
+
+  - id: NF-006
+    title: 电子文档属性中的作者字段非空或含申请人姓名（技术性提示）
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    note: >-
+      **现行国家文件未禁止**文档属性含作者信息；基金委流程本身要求上传含署名的个人简历与代表作。
+      未配置名单时，本条报"作者字段非空"；配置名单后按姓名匹配报告。两者都只是清理建议。
+
+  - id: NF-007
+    title: 电子文档属性中的单位字段含依托单位名称（技术性提示）
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    note: 同 NF-006：无禁止性规定，仅为清理建议。
+
+  - id: NF-008
+    title: 电子文档属性中的「最后修改者」含申请人姓名（技术性提示）
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    note: 同 NF-006：无禁止性规定，仅为清理建议。
+
+  - id: NF-009
+    title: 按配置的行范围统计身份线索词出现位置
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      coverLines: 0
+    note: >-
+      coverLines 留空表示未配置：本插件不假定任何机构模板的封面行数。
+      配置后本条只按行范围统计身份线索词出现位置，供人工查看分布，不作任何判定。
+
+  - id: NF-010
+    title: 材料长度应符合本机构配置的限额
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第十二条
+      excerpt: 申请人申请国家自然科学基金资助，应当以年度基金项目指南为基础确定研究项目，在规定期限内通过依托单位向基金管理机构提出书面申请。
+      kind: institutional-configuration
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    alsoBasis:
+      - document: 《国家自然科学基金条例》
+        number: 国务院令第796号
+        clause: 第十三条（二）
+        excerpt: 申请材料不符合年度基金项目指南要求的；
+        kind: direct
+        source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      maxLines: 0
+      maxChars: 0
+    note: >-
+      页数与字数限额**逐年变化且按项目类型不同**（例如不同年度、不同项目类型的填报说明分别给出
+      页数或字数上限），本规则库不固化任何年度数值，必须由使用方按当年指南填写。
+      maxLines 统计的是抽取后的段落行数，**不等同于排版页数**；需要按页校验时应在抽取阶段提供分页信息。
+      条例第十三条第二项把"不符合年度指南要求"列为不予受理情形，这是本条要求"以年度指南为准"的依据。
+
+  - id: NF-011
+    title: 材料应包含本机构形式审查清单要求的条目
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第十条（二）
+      excerpt: 审核申请人或者项目负责人所提交材料的真实性、完整性和合法性；
+      kind: institutional-configuration
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      require: []
+    note: >-
+      require 留空表示未配置。审查项清单由本机构或当年指南确定，本规则库不硬编码。
+      配置形如：require: [{ label: 申请人签字, match: 申请人签字 }]。
+      本条只做字面存在性检查，不判断栏目是否填写正确。
+      注意：国家层面**未见**公开发布名为《项目申请受理审查要点》的文件，
+      最权威的替代依据是条例第十三条与当年指南的"不予受理情形说明"。
+
+  - id: NF-012
+    title: 声明已获得其他资助或重复申请时应包含披露说明
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第十二条
+      excerpt: 申请人申请基金资助的项目研究内容已获得其他资助的，应当在申请材料中说明资助情况。
+      kind: institutional-configuration
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      markerPatterns: []
+      requiredDisclosure: []
+    note: >-
+      条例第十二条对"已获得其他资助"有明文说明义务，这是本条的**上位依据**（真实、稳定）；
+      但"如何识别一份材料属于重复或延续申请"与"应披露哪些具体内容"由本机构或当年指南确定，
+      故两项留空表示未配置：本插件不假定判定词，也不假定披露内容清单。
+
+  - id: NF-013
+    title: 指定行范围内出现身份线索词
+    severity: info
+    basis:
+      document: 《国家自然科学基金条例》
+      number: 国务院令第796号
+      clause: 第二十一条
+      excerpt: 基金管理机构工作人员、评审专家均应当依法承担保密义务，不得以任何方式披露未公开的评审专家的基本情况、评审意见、评审结果等与评审有关的信息。
+      kind: derived-from-principle
+      source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      patchedSections: []
+      scopeFromLine: 0
+      scopeToLine: 0
+    note: >-
+      三项均需配置才执行。用于"某个章节希望重点自查身份线索"的场景：
+      把 patchedSections 填成该范围内要留意的词，scopeFromLine/scopeToLine 填行范围。
+      同 NF-002：无明文依据，只作提示。
+
+  - id: NF-014
+    title: 应如实填写研究生导师和博士后合作导师姓名
+    severity: info
+    basis:
+      document: 《2026 年度国家自然科学基金项目指南·申请规定》
+      number: 2026 年度（逐年更新）
+      clause: 四（一）6
+      excerpt: 申请人应当如实填写研究生导师和博士后合作导师姓名，不得错填漏填。
+      kind: institutional-configuration
+      source: https://kyc.qzc.edu.cn/_upload/article/files/5f/56/a79b880145f98ceacdf150a81f9d/3d4fa678-3bdc-4232-83b3-cffd5dc5c934.pdf
+    alsoBasis:
+      - document: 《国家自然科学基金条例》
+        number: 国务院令第796号
+        clause: 第十二条
+        excerpt: 申请人应当对所提交申请材料的真实性、完整性和合法性负责。
+        kind: direct
+        source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      advisorNames: []
+      requireMention: false
+    note: >-
+      ⚠️ 本条是**反向检查**：年度指南**要求**如实填写导师姓名，而 NF-004 会把"出现导师姓名"
+      列为身份线索词。两者不矛盾——NF-004 是技术性提示，本条才是明文要求的检查。
+      requireMention 与 advisorNames 均需配置才执行：名单从配置的 advisorNames 取，
+      填写形式（"导师：X"）因模板而异，故需显式开启。条款依据为**年度文件**，必须按当年指南复核。
+
+  - id: NF-015
+    title: 申请书不得含有涉密或敏感信息
+    severity: info
+    basis:
+      document: 《2026 年度国家自然科学基金项目指南·申请规定》
+      number: 2026 年度（逐年更新）
+      clause: 一（二）1
+      excerpt: 申请书中不得出现任何违反法律法规的内容，不得含有涉密信息或敏感信息。
+      kind: institutional-configuration
+      source: https://kyc.qzc.edu.cn/_upload/article/files/5f/56/a79b880145f98ceacdf150a81f9d/3d4fa678-3bdc-4232-83b3-cffd5dc5c934.pdf
+    alsoBasis:
+      - document: 《国家自然科学基金条例》
+        number: 国务院令第796号
+        clause: 第十二条
+        excerpt: 申请人、参与者及其依托单位应当遵守科研诚信和科技伦理要求，签署科研诚信和科技伦理承诺书
+        kind: direct
+        source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
+    params:
+      secretTerms: []
+    note: >-
+      这是**唯一真实存在**的"不得出现"类明文——但它管的是**涉密与敏感信息**，不是身份信息，
+      两者极易混淆，务必不要把它当成匿名化的法源。
+      secretTerms 留空表示未配置：涉密范围由国家保密规定界定，本插件不硬编码任何涉密词表，
+      由使用方按其保密管理要求填写。
+
+disabled: []

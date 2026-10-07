@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-011",
+  "purpose": "材料应包含本机构形式审查清单要求的条目（清单由本机构配置）",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-011-compliant.json",
+      "expect": {
+        "ruleId": "NF-011",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-011-unsafe.json",
+      "expect": {
+        "ruleId": "NF-011",
+        "count": 1
+      }
+    }
+  ]
+}

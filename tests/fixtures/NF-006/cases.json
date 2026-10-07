@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-006",
+  "purpose": "电子文档属性中的作者字段不应含申请人姓名",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-006-compliant.json",
+      "expect": {
+        "ruleId": "NF-006",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-006-unsafe.json",
+      "expect": {
+        "ruleId": "NF-006",
+        "count": 1
+      }
+    }
+  ]
+}

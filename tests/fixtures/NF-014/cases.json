@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-014",
+  "purpose": "年度指南要求如实填写导师姓名（反向检查：与 NF-004 的技术性提示不矛盾）",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-014-compliant.json",
+      "expect": {
+        "ruleId": "NF-014",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-014-unsafe.json",
+      "expect": {
+        "ruleId": "NF-014",
+        "count": 1
+      }
+    }
+  ]
+}

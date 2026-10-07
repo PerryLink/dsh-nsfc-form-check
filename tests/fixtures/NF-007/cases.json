@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-007",
+  "purpose": "电子文档属性中的单位字段不应含依托单位名称",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-007-compliant.json",
+      "expect": {
+        "ruleId": "NF-007",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-007-unsafe.json",
+      "expect": {
+        "ruleId": "NF-007",
+        "count": 1
+      }
+    }
+  ]
+}

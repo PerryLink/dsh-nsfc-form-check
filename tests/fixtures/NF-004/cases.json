@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-004",
+  "purpose": "正文中不应出现导师姓名",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-004-compliant.json",
+      "expect": {
+        "ruleId": "NF-004",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-004-unsafe.json",
+      "expect": {
+        "ruleId": "NF-004",
+        "count": 1
+      }
+    }
+  ]
+}

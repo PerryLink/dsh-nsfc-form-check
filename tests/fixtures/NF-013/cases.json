@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-013",
+  "purpose": "指定行范围内不应出现不应出现的身份词（范围由本机构配置）",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-013-compliant.json",
+      "expect": {
+        "ruleId": "NF-013",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-013-unsafe.json",
+      "expect": {
+        "ruleId": "NF-013",
+        "count": 1
+      }
+    }
+  ]
+}

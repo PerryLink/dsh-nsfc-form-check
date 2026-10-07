@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-009",
+  "purpose": "封面可署名而正文需匿名，按配置的行范围统计身份词出现位置",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-009-compliant.json",
+      "expect": {
+        "ruleId": "NF-009",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-009-unsafe.json",
+      "expect": {
+        "ruleId": "NF-009",
+        "count": 1
+      }
+    }
+  ]
+}

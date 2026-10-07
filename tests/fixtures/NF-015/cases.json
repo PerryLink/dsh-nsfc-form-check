@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-015",
+  "purpose": "申请书中不得含有涉密信息或敏感信息（唯一真实存在的「不得出现」类明文，对象是涉密而非身份）",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-015-compliant.json",
+      "expect": {
+        "ruleId": "NF-015",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-015-unsafe.json",
+      "expect": {
+        "ruleId": "NF-015",
+        "count": 1
+      }
+    }
+  ]
+}

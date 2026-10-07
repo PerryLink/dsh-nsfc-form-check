@@ -1,0 +1,22 @@
+{
+  "ruleId": "NF-003",
+  "purpose": "正文中不应出现依托单位名称",
+  "pairs": [
+    {
+      "name": "expected-state",
+      "material": "NF-003-compliant.json",
+      "expect": {
+        "ruleId": "NF-003",
+        "count": 0
+      }
+    },
+    {
+      "name": "difference-present",
+      "material": "NF-003-unsafe.json",
+      "expect": {
+        "ruleId": "NF-003",
+        "count": 1
+      }
+    }
+  ]
+}

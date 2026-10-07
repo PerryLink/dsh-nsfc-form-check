@@ -1,0 +1,22 @@
+{
+  "text": "张伟\n示例大学\n申请代码：H0301\n一、立项依据\n本研究由张伟负责。",
+  "metadata": {},
+  "roster": {
+    "authorNames": [
+      "张伟"
+    ],
+    "institutionNames": [
+      "示例大学",
+      "示例大学附属第一医院"
+    ],
+    "advisorNames": [
+      "李建国"
+    ],
+    "allowList": []
+  },
+  "configure": {
+    "NF-009": {
+      "coverLines": 3
+    }
+  }
+}
