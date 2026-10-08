@@ -1,4 +1,24 @@
-# dsh-nsfc-form-check
+# dsh-nsfc-form-check — Revisão formal de uma candidatura ao NSFC e aviso de indícios de identidade segundo a lista da instituição
+
+`dsh-nsfc-form-check` lê uma candidatura ao NSFC —as suas linhas de texto, as propriedades eletrónicas do documento e a lista de termos de identidade da própria instituição— e confronta esse material com um pacote de regras versionado: se existe uma lista configurada, em que linhas do corpo e dentro de que intervalo de linhas configurado aparecem os termos de requerente, instituição e orientador que configurou, o que consta nas propriedades de título, autor, empresa e última modificação, se o material cabe no limite de extensão fixado pela instalação, se estão presentes os itens de revisão formal e a declaração de candidatura repetida que configurou, se o nome do orientador está preenchido como exigem as orientações anuais, e se aparece algum termo classificado ou sensível configurado. Cada constatação nomeia a cláusula de onde vem e indica se essa cláusula é um requisito direto, um princípio ou uma configuração local, e toda a verificação que não pôde ser executada consta em `skipped` com o seu motivo.
+
+## O que ele responde
+
+| Você pergunta | O que ele responde |
+|---|---|
+| Ninguém preencheu a lista de nomes de requerentes. A verificação de identidade passa sem mais? | Não. `NF-001` é a primeira coisa reportada quando `authorNames`, `institutionNames` e `advisorNames` estão vazios, e cada verificação de identidade que precisa desses termos consta em `skipped` com o seu motivo. Uma lista de constatações vazia nunca significa que nada estava errado — leia `NF-001` e as entradas de `skipped` antes de tirar qualquer conclusão. |
+| No corpo aparece um coautor com o mesmo apelido do requerente. | `NF-002` compara literalmente os `authorNames` configurados, linha a linha, pelo que um homónimo, um apelido comum ou a citação do trabalho de outro investigador podem coincidir. A constatação é apenas um aviso técnico — 《国家自然科学基金条例》(国务院令第796号) 第二十一条 exige confidencialidade aos avaliadores e nada proíbe que um nome apareça no corpo — por isso um termo já esclarecido pode ser acrescentado a `allowList`. |
+| A propriedade de autor tem um nome. É reportado, e é preciso configurar antes uma lista? | É reportado, e não é precisa lista. `NF-006` não necessita de roster: com `authorNames` vazio continua a reportar qualquer propriedade de autor não vazia, e com roster configurado diz se o valor corresponde a um nome de requerente. `NF-005`, `NF-007` e `NF-008` precisam de uma lista de termos de identidade e sem ela entram em `skipped`. As quatro leem apenas as propriedades, pelo que nada dizem sobre o corpo do texto. |
+| Os limites de páginas e palavras fui eu que preenchi. Vai dizer-me que a candidatura é demasiado longa? | Apenas dentro do limite que você definiu. `NF-010` sai com `maxLines` e `maxChars` por configurar e entra em `skipped`, porque esses limites mudam todos os anos e conforme o tipo de projeto; depois de preenchidos, reporta o número de parágrafos extraídos ou o total de caracteres que os excede. `maxLines` conta parágrafos extraídos, não páginas paginadas, pelo que não equivale a um número de páginas. |
+| Estavam no material todos os itens de revisão formal que o nosso gabinete de investigação pede? | `NF-011` reporta-se em `skipped` até `require` ser configurado, e sem lista não finge conhecê-la. Depois de configurada, compara literalmente as suas frases `match` e reporta as que não encontra. Verifica que a frase está presente, não que a casela esteja bem preenchida nem que a assinatura seja autêntica. |
+| Vamos reapresentar a candidatura do ano passado. A nota de declaração tem de constar? | `NF-012` precisa ao mesmo tempo de `markerPatterns`, que reconhecem a redação do seu modelo para uma candidatura repetida ou de continuação, e de `requiredDisclosure`, que enumera o que deve ser declarado. Com qualquer um deles por configurar entra em `skipped`; quando os marcadores estão configurados mas a declaração não é encontrada, reporta que esta regra não é aplicável. Nunca supõe uma redação da declaração nem decide que a candidatura seja realmente repetida. |
+
+## Normas que segue
+
+| Documento | Número | Regras que o citam |
+|---|---|---|
+| 《国家自然科学基金条例》 | 国务院令第796号 | NF-001, NF-002, NF-003, NF-004, NF-005, NF-006, NF-007, NF-008, NF-009, NF-010, NF-011, NF-012, NF-013, NF-014, NF-015 |
+| 《2026 年度国家自然科学基金项目指南·申请规定》 | 2026 年度（逐年更新） | NF-014, NF-015 |
 
 **Boundary:** this plugin checks an **NSFC proposal's text and electronic document properties** and
 reports the identity clues it finds, alongside the length and form-review items a deployment

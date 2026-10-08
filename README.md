@@ -1,4 +1,24 @@
-# dsh-nsfc-form-check
+# dsh-nsfc-form-check — NSFC proposal form review and identity-clue prompting against the institution's own roster
+
+`dsh-nsfc-form-check` reads one NSFC proposal — its body lines, its electronic document properties, and the institution's own roster of identity terms — and checks that material against a versioned rule pack: whether a roster is configured at all, where the configured applicant, institution and advisor terms occur in the body and inside a configured line range, what the title, author, company and last-modified-by properties carry, whether the material fits the length limit the deployment set, whether the configured form-review items and duplicate-application disclosure are present, whether the advisor's name has been filled in as the yearly guidelines require, and whether any configured classified or sensitive term appears. Every finding names the clause it came from, states whether that clause is a direct requirement, a principle or a local configuration, and every check that could not run is listed in `skipped` with its reason.
+
+## What it answers
+
+| You ask | What it answers |
+|---|---|
+| Nobody filled in the applicant name list. Does the identity checking just pass? | No. `NF-001` is the first thing reported when `authorNames`, `institutionNames` and `advisorNames` are all empty, and every identity check that needs those terms reports itself in `skipped` with its reason. An empty finding list therefore never means nothing was wrong — read `NF-001` and the `skipped` entries before drawing any conclusion. |
+| A co-author with the same surname as the applicant appears in the body text. | `NF-002` matches the configured `authorNames` literally, line by line, so a namesake, a common surname or a citation of another researcher's work can all be reported. The finding is a technical prompt only — 《国家自然科学基金条例》(国务院令第796号) 第二十一条 requires confidentiality from reviewers and says nothing that forbids a name in the body — so a term you have already cleared can be added to `allowList`. |
+| The author property holds a name. Is that reported, and does it need a configured list? | Yes, and no. `NF-006` does not need a roster: with `authorNames` empty it still reports any non-empty author property, and with a roster configured it says whether the value matches an applicant name. `NF-005`, `NF-007` and `NF-008` do need an identity-term list and enter `skipped` without one. All four only read the properties, so they say nothing about the body text. |
+| I filled in the page and word limits myself. Will it tell me the proposal is too long? | Only within the limit you set. `NF-010` ships `maxLines` and `maxChars` unset and enters `skipped`, because those limits change every year and by project type; once you fill them in it reports the extracted paragraph count or the character total that exceeds them. `maxLines` counts extracted paragraphs, not typeset pages, so it is not the same as a page count. |
+| Did the material include every form-review item our research office asks for? | `NF-011` reports itself in `skipped` until `require` is configured, and with no checklist the plugin does not pretend to know one. Once configured it matches your `match` phrases literally and reports the ones it cannot find. It checks that the phrase is present, not that the column was filled in correctly or that the signature is genuine. |
+| We are re-submitting last year's proposal. Must the disclosure note be there? | `NF-012` needs both `markerPatterns`, which recognise your template's wording for a repeat or follow-on application, and `requiredDisclosure`, which lists what must be disclosed. With either unset it enters `skipped`; when the markers are configured but no declaration is found it reports that this rule does not apply. It never assumes a disclosure wording, and never decides that a proposal really is a repeat. |
+
+## Standards it follows
+
+| Document | Number | Cited by rules |
+|---|---|---|
+| 《国家自然科学基金条例》 | 国务院令第796号 | NF-001, NF-002, NF-003, NF-004, NF-005, NF-006, NF-007, NF-008, NF-009, NF-010, NF-011, NF-012, NF-013, NF-014, NF-015 |
+| 《2026 年度国家自然科学基金项目指南·申请规定》 | 2026 年度（逐年更新） | NF-014, NF-015 |
 
 **Boundary:** this plugin checks an **NSFC proposal's text and electronic document properties** and
 reports the identity clues it finds, alongside the length and form-review items a deployment
