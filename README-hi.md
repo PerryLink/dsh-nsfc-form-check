@@ -45,7 +45,19 @@ dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 
 ## Configuration
 
-सभी समायोज्य पैरामीटर `src/config.ts` की Schemastery स्कीमा में हैं, इसलिए कोड बदले बिना `cordis.yml` से बदले जा सकते हैं; प्रति-नियम सीमाएँ `rules/` के नियम-पैक में हैं। कुंजियाँ और प्रति-नियम पैरामीटर [README.md](README.md#configuration) (अंग्रेज़ी मुख्य संस्करण) में हैं।
+सभी समायोज्य पैरामीटर `src/config.ts` की Schemastery स्कीमा में हैं, इसलिए कोड बदले बिना `cordis.yml` से बदले जा सकते हैं; प्रति-नियम सीमाएँ `rules/` के नियम-पैक में हैं।
+
+| कुंजी | प्रकार | डिफ़ॉल्ट | विवरण |
+|---|---|---|---|
+| `rulesFile` | string | `rules/nsfc-form-check.yaml` | नियम-पैक का पथ, पैकेज रूट के सापेक्ष |
+| `disabledRules` | string[] | `[]` | बंद करने वाले नियम id; प्रत्येक `skipped` में दिखता है |
+| `onlyRules` | string[] | `[]` | केवल ये नियम चलाएँ; खाली होने पर सभी नियम चलते हैं |
+| `skipNotes` | string | `""` | हर `skipped` कारण के आगे जोड़ी जाने वाली टिप्पणी |
+| `authorNames` | string[] | `[]` | खोजे जाने वाले आवेदक नाम |
+| `institutionNames` | string[] | `[]` | खोजे जाने वाले संस्थान और इकाई नाम |
+| `advisorNames` | string[] | `[]` | खोजे जाने वाले सलाहकार नाम |
+| `allowList` | string[] | `[]` | मेल खाने पर भी अनदेखा किए जाने वाले शब्द |
+| `timeoutMs` | number | `120000` | उपकरण का सहकारी समय-सीमा बजट |
 
 ## Material format
 

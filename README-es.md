@@ -45,7 +45,19 @@ dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 
 ## Configuration
 
-Todos los parámetros ajustables viven en el esquema Schemastery de `src/config.ts`, por lo que se cambian desde `cordis.yml` sin tocar el código; los umbrales por regla están en el paquete de reglas bajo `rules/`. Las claves y los parámetros de cada regla están en [README.md](README.md#configuration) (versión principal en inglés).
+Todos los parámetros ajustables viven en el esquema Schemastery de `src/config.ts`, por lo que se cambian desde `cordis.yml` sin tocar el código; los umbrales por regla están en el paquete de reglas bajo `rules/`.
+
+| Clave | Tipo | Predeterminado | Descripción |
+|---|---|---|---|
+| `rulesFile` | string | `rules/nsfc-form-check.yaml` | Ruta del paquete de reglas, relativa a la raíz del paquete |
+| `disabledRules` | string[] | `[]` | Ids de reglas que se dejan de ejecutar; cada una aparece en `skipped` |
+| `onlyRules` | string[] | `[]` | Ejecutar solo estas reglas; vacío ejecuta todas |
+| `skipNotes` | string | `""` | Nota añadida a cada motivo de `skipped` |
+| `authorNames` | string[] | `[]` | Nombres de solicitantes que se buscan |
+| `institutionNames` | string[] | `[]` | Nombres de instituciones y unidades que se buscan |
+| `advisorNames` | string[] | `[]` | Nombres de asesores que se buscan |
+| `allowList` | string[] | `[]` | Términos que se ignoran aunque coincidan |
+| `timeoutMs` | number | `120000` | Presupuesto de tiempo de espera cooperativo de la herramienta |
 
 ## Material format
 
