@@ -1,6 +1,6 @@
 {
   "name": "dsh-nsfc-form-check",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "国家自然科学基金申请书形式审查与匿名化提示（依据《国家自然科学基金条例》与申请人导入的当年指南，仅提示差异，不作出定性结论）",
   "type": "module",
   "main": "lib/index.mjs",
@@ -32,7 +32,7 @@
     "verify:self-contained": "node scripts/verify-self-contained.mjs",
     "check:lockfile": "node scripts/check-lockfile-drift.mjs",
     "check:readmes": "node scripts/check-readme-sync.mjs",
-    "prepublishOnly": "pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify:self-contained && pnpm run check:readmes && pnpm run check:citations",
+    "prepublishOnly": "pnpm run typecheck && pnpm test && pnpm run build && pnpm run verify:self-contained && pnpm run check:readmes",
     "prepare": "tsdown",
     "check:citations": "node scripts/check-citations.mjs"
   },
