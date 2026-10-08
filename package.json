@@ -1,6 +1,6 @@
 {
   "name": "dsh-nsfc-form-check",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "国家自然科学基金申请书形式审查与匿名化提示（依据《国家自然科学基金条例》与申请人导入的当年指南，仅提示差异，不作出定性结论）",
   "type": "module",
   "main": "lib/index.mjs",
