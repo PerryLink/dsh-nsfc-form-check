@@ -63,8 +63,7 @@ themselves in `skipped` until configured, so an unfilled threshold can never rea
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./dsh-nsfc-form-check-0.1.0.tgz
+dsh plugin --profile <name> add dsh-nsfc-form-check
 dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 ```
 

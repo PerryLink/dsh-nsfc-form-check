@@ -39,8 +39,7 @@ tracks reviewer comments). It reads one proposal and reports literal matches aga
 ## Install
 
 ```sh
-pnpm pack
-dsh plugin --profile <name> add ./*.tgz
+dsh plugin --profile <name> add dsh-nsfc-form-check
 dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 ```
 
