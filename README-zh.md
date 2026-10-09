@@ -1,6 +1,14 @@
 # dsh-nsfc-form-check — 国家自然科学基金申请书形式审查与身份线索词提示，按本机构名单核对
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-nsfc-form-check` 读取一份国家自然科学基金申请书——正文行、电子文档属性，以及本机构自己配置的身份词名单——按版本化规则库核对：名单是否已配置，配置的申请人、依托单位与导师姓名在正文中及指定行范围内的出现位置，标题、作者、单位、「最后修改者」四个文档属性各写了什么，材料是否超出使用方配置的长度限额，配置的形式审查项与重复申请披露说明是否齐备，导师姓名是否已按当年指南要求如实填写，以及是否出现配置的涉密或敏感词。每一条发现都写出它所依据的条款，并标明该条款是直接规定、原则推论还是本机构配置；每一项无法执行的检查都以 `skipped` 连同原因列出。
+
+## 实际输出长什么样
+
+![Terminal demo of dsh-nsfc-form-check: real output over its NF-009 fixture](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-demo.png)
+
+本插件对自己 `NF-009` 测试夹具的**真实输出**，不是示意图。规则库不伪造引文，因此每条发现都会同时写明所引条款，以及该条款原文本次未取得。
 
 ## 它回答什么问题
 

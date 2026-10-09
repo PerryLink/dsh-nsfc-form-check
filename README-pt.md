@@ -1,6 +1,14 @@
 # dsh-nsfc-form-check — Revisão formal de uma candidatura ao NSFC e aviso de indícios de identidade segundo a lista da instituição
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-nsfc-form-check` lê uma candidatura ao NSFC —as suas linhas de texto, as propriedades eletrónicas do documento e a lista de termos de identidade da própria instituição— e confronta esse material com um pacote de regras versionado: se existe uma lista configurada, em que linhas do corpo e dentro de que intervalo de linhas configurado aparecem os termos de requerente, instituição e orientador que configurou, o que consta nas propriedades de título, autor, empresa e última modificação, se o material cabe no limite de extensão fixado pela instalação, se estão presentes os itens de revisão formal e a declaração de candidatura repetida que configurou, se o nome do orientador está preenchido como exigem as orientações anuais, e se aparece algum termo classificado ou sensível configurado. Cada constatação nomeia a cláusula de onde vem e indica se essa cláusula é um requisito direto, um princípio ou uma configuração local, e toda a verificação que não pôde ser executada consta em `skipped` com o seu motivo.
+
+## Como é a saída
+
+![Terminal demo of dsh-nsfc-form-check: real output over its NF-009 fixture](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-demo.png)
+
+Saída real deste plugin sobre o seu próprio fixture de teste `NF-009` — não é uma simulação. O pacote de regras não inventa citações, por isso cada achado nomeia a cláusula aplicada e avisa que o seu texto não foi obtido.
 
 ## O que ele responde
 

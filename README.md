@@ -1,6 +1,14 @@
 # dsh-nsfc-form-check — NSFC proposal form review and identity-clue prompting against the institution's own roster
 
+[![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+
 `dsh-nsfc-form-check` reads one NSFC proposal — its body lines, its electronic document properties, and the institution's own roster of identity terms — and checks that material against a versioned rule pack: whether a roster is configured at all, where the configured applicant, institution and advisor terms occur in the body and inside a configured line range, what the title, author, company and last-modified-by properties carry, whether the material fits the length limit the deployment set, whether the configured form-review items and duplicate-application disclosure are present, whether the advisor's name has been filled in as the yearly guidelines require, and whether any configured classified or sensitive term appears. Every finding names the clause it came from, states whether that clause is a direct requirement, a principle or a local configuration, and every check that could not run is listed in `skipped` with its reason.
+
+## What it looks like
+
+![Terminal demo of dsh-nsfc-form-check: real output over its NF-009 fixture](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-demo.png)
+
+Real output from this plugin over its own `NF-009` test fixture — not a mock-up. The rule pack ships no invented quotations, so a finding names both the clause it applied and the fact that the clause text was not obtained.
 
 ## What it answers
 
