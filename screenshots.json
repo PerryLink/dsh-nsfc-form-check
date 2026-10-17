@@ -1,0 +1,14 @@
+[
+  {
+    "path": "docs/assets/dsh-nsfc-form-check-hero.png",
+    "kind": "hero",
+    "alt": "dsh-nsfc-form-check terminal output",
+    "caption": "Real dsh-nsfc-form-check checker output; 38 tests passed."
+  },
+  {
+    "path": "docs/assets/dsh-nsfc-form-check-demo.gif",
+    "kind": "demo",
+    "alt": "Animated dsh-nsfc-form-check terminal session",
+    "caption": "The same run, assembled line by line."
+  }
+]
