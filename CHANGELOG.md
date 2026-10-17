@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.8] - 2026-10-18
+
+### Fixed
+
+- **NF-015’s citation kinds match what the clauses say.** The primary excerpt directly says the application must not contain classified or sensitive information, so it is `direct`; the alsoBasis only requires research-integrity/ethics commitments, so it is `derived-from-principle`. The rule stays `info`.
+
 ## [0.2.7] - 2026-10-18
 
 ### Changed

@@ -286,14 +286,14 @@ rules:
       number: 2026 年度（逐年更新）
       clause: 一（二）1
       excerpt: 申请书中不得出现任何违反法律法规的内容，不得含有涉密信息或敏感信息。
-      kind: institutional-configuration
+      kind: direct
       source: https://kyc.qzc.edu.cn/_upload/article/files/5f/56/a79b880145f98ceacdf150a81f9d/3d4fa678-3bdc-4232-83b3-cffd5dc5c934.pdf
     alsoBasis:
       - document: 《国家自然科学基金条例》
         number: 国务院令第796号
         clause: 第十二条
         excerpt: 申请人、参与者及其依托单位应当遵守科研诚信和科技伦理要求，签署科研诚信和科技伦理承诺书
-        kind: direct
+        kind: derived-from-principle
         source: https://www.gov.cn/zhengce/content/202411/content_6986947.htm
     params:
       secretTerms: []
