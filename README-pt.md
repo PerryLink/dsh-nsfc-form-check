@@ -4,6 +4,13 @@
 
 `dsh-nsfc-form-check` lê uma candidatura ao NSFC —as suas linhas de texto, as propriedades eletrónicas do documento e a lista de termos de identidade da própria instituição— e confronta esse material com um pacote de regras versionado: se existe uma lista configurada, em que linhas do corpo e dentro de que intervalo de linhas configurado aparecem os termos de requerente, instituição e orientador que configurou, o que consta nas propriedades de título, autor, empresa e última modificação, se o material cabe no limite de extensão fixado pela instalação, se estão presentes os itens de revisão formal e a declaração de candidatura repetida que configurou, se o nome do orientador está preenchido como exigem as orientações anuais, e se aparece algum termo classificado ou sensível configurado. Cada constatação nomeia a cláusula de onde vem e indica se essa cláusula é um requisito direto, um princípio ou uma configuração local, e toda a verificação que não pôde ser executada consta em `skipped` com o seu motivo.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-nsfc-form-check
+dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
+```
+
 ## Como é a saída
 
 ![Terminal demo of dsh-nsfc-form-check: real output over its NF-009 fixture](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-hero.png)
@@ -65,13 +72,6 @@ tracks reviewer comments). It reads one proposal and reports literal matches aga
 ## What it does
 
 A tabela de regras, os campos e o comportamento detalhado estão em [README.md](README.md#what-it-does) (versão principal em inglês). O plugin apenas lista divergências literais frente às cláusulas citadas e indica em `skipped` cada verificação que não pôde ser executada.
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-nsfc-form-check
-dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
-```
 
 ## Configuration
 

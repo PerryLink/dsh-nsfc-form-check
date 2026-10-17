@@ -4,6 +4,13 @@
 
 `dsh-nsfc-form-check` reads one NSFC proposal — its body lines, its electronic document properties, and the institution's own roster of identity terms — and checks that material against a versioned rule pack: whether a roster is configured at all, where the configured applicant, institution and advisor terms occur in the body and inside a configured line range, what the title, author, company and last-modified-by properties carry, whether the material fits the length limit the deployment set, whether the configured form-review items and duplicate-application disclosure are present, whether the advisor's name has been filled in as the yearly guidelines require, and whether any configured classified or sensitive term appears. Every finding names the clause it came from, states whether that clause is a direct requirement, a principle or a local configuration, and every check that could not run is listed in `skipped` with its reason.
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-nsfc-form-check
+dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
+```
+
 ## What it looks like
 
 ![Terminal demo of dsh-nsfc-form-check: real output over its NF-009 fixture](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-hero.png)
@@ -89,13 +96,6 @@ requirement, a principle, or a local configuration.
 
 Rules whose thresholds are yearly or per-project-type ship **empty** on purpose. They report
 themselves in `skipped` until configured, so an unfilled threshold can never read as "nothing wrong".
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-nsfc-form-check
-dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
-```
 
 ## Configuration
 

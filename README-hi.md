@@ -4,6 +4,13 @@
 
 `dsh-nsfc-form-check` एक NSFC आवेदन — उसकी मुख्य पंक्तियाँ, इलेक्ट्रॉनिक दस्तावेज़-गुण, और संस्था की अपनी पहचान-शब्द सूची — पढ़ता है और उस सामग्री की जाँच एक संस्करणबद्ध नियम-पैक से करता है: क्या कोई सूची कॉन्फ़िगर है, कॉन्फ़िगर किए गए आवेदक, संस्था और पर्यवेक्षक नाम मुख्य पाठ में तथा निर्धारित पंक्ति-सीमा में कहाँ आते हैं, शीर्षक, लेखक, कंपनी और अंतिम-संशोधन गुणों में क्या दर्ज है, सामग्री उपयोगकर्ता द्वारा तय लंबाई-सीमा के भीतर है या नहीं, कॉन्फ़िगर किए गए औपचारिक जाँच-मद और दोहरा-आवेदन प्रकटीकरण मौजूद हैं या नहीं, पर्यवेक्षक का नाम वार्षिक दिशानिर्देश के अनुसार भरा गया है या नहीं, और कोई कॉन्फ़िगर किया गया गोप्य या संवेदनशील शब्द आता है या नहीं। प्रत्येक निष्कर्ष उस धारा का नाम देता है जिससे वह आया, और बताता है कि वह धारा सीधा प्रावधान है, सिद्धांत है या स्थानीय कॉन्फ़िगरेशन; और जो जाँच नहीं चल सकी वह `skipped` में कारण सहित दर्ज होती है।
 
+## Install
+
+```sh
+dsh plugin --profile <name> add dsh-nsfc-form-check
+dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
+```
+
 ## आउटपुट कैसा दिखता है
 
 ![Terminal demo of dsh-nsfc-form-check: real output over its NF-009 fixture](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-hero.png)
@@ -65,13 +72,6 @@ tracks reviewer comments). It reads one proposal and reports literal matches aga
 ## What it does
 
 नियम-सूची, फ़ील्ड और विस्तृत व्यवहार [README.md](README.md#what-it-does) (अंग्रेज़ी मुख्य संस्करण) में हैं। यह प्लगइन केवल उद्धृत धाराओं के सामने शाब्दिक अंतर सूचीबद्ध करता है और हर न चल पाई जाँच को `skipped` में बताता है।
-
-## Install
-
-```sh
-dsh plugin --profile <name> add dsh-nsfc-form-check
-dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
-```
 
 ## Configuration
 
