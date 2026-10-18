@@ -41,22 +41,11 @@ dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 
 **边界（中文译文，以英文原文为准）：** 本插件核对**国家自然科学基金申请书的文本与电子文档属性**，并报出它发现的身份线索，以及部署方配置的篇幅与形式审查项。它不是 `dsh-rulefile-check`（后者审查规范性文件的合法性），不是 `dsh-policy-brief-draft`（后者起草政策解读），也不是 `dsh-review-reply-check`（后者跟踪评审意见）。它读取一份申请书，并报出与所引条款之间的字面匹配。
 
-> ### ⚠️ Read this before using the anonymity checks
+> ### ⚠️ 在使用匿名性检查之前，请先读这一段（以英文原文为准）
 >
-> **There is no current national provision that forbids an applicant's name, institution or advisor
-> from appearing in an NSFC proposal.** Three independent texts were read in full for this plugin —
-> 《国家自然科学基金条例》(国务院令第796号), the 2026 年度《项目指南·申请规定》, and the 2019 年度
-> guidelines — and none contains 匿名, 盲审, 活页, or any "must not appear" wording about identity.
-> The regulation does not contain the word 匿名 at all. Its **avoidance** clause (第二十条) requires a
-> reviewer from the applicant's own legal entity to recuse, which presupposes that the system knows
-> the applicant's institution — the opposite of an anonymous process.
+> **目前没有任何国家规定禁止申请人的姓名、单位或导师出现在国家自然科学基金申请书中。** 为编写本插件，完整阅读了三份独立文本——《国家自然科学基金条例》（国务院令第796号）、2026 年度《项目指南·申请规定》以及 2019 年度指南——其中没有任何一份包含 匿名、盲审、活页，或任何关于身份的「不得出现」表述。该条例中根本没有「匿名」一词。其**回避**条款（第二十条）要求来自申请人同一法人单位的评审专家回避，这恰恰以系统知晓申请人所在单位为前提——与匿名流程正好相反。
 >
-> So every finding this plugin makes about a name or an institution is a **technical observation for
-> a human to weigh**, labelled 身份线索词 and never phrased as a violation. The plugin is useful for a
-> research-office self-check, and it is **wrong to use it as a compliance gate**. Two rules go further
-> and cite the guidance verbatim: `NF-014` checks that the advisor's name **is** filled in, because the
-> yearly guidelines require it, and `NF-015` checks 涉密与敏感信息, which is the one "must not appear"
-> requirement that really exists — and its object is classified information, not identity.
+> 因此，本插件就姓名或单位作出的每一项发现，都只是**供人自行权衡的技术性观察**，标记为 身份线索词，从不表述为违规。本插件可用于科研管理部门的自查，但**把它当作合规门槛来用是错误的**。有两条规则更进一步，逐字引用了指南：`NF-014` 核对导师姓名**已**填写，因为年度指南有此要求；`NF-015` 核对 涉密与敏感信息，这是真正存在的唯一一项「不得出现」要求——而它的对象是涉密信息，不是身份。
 
 ## Compatibility
 
