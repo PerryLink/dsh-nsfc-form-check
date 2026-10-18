@@ -1,6 +1,6 @@
 {
   "name": "dsh-nsfc-form-check",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "国家自然科学基金申请书形式审查与匿名化提示（依据《国家自然科学基金条例》与申请人导入的当年指南，仅提示差异，不作出定性结论）",
   "type": "module",
   "main": "lib/index.mjs",
@@ -84,10 +84,9 @@
     "@deepseek-ai/schemastery": "3.18.5-alpha.1",
     "@types/node": "^22.20.1",
     "vitest": "^3.2.7",
-    "@deepseek-ai/dsh-working-directory": "0.2.1-rc.2"
-  },
-  "dependencies": {
+    "@deepseek-ai/dsh-working-directory": "0.2.1-rc.2",
     "tsdown": "^0.22.14",
     "typescript": "^5.9.3"
-  }
+  },
+  "dependencies": {}
 }
