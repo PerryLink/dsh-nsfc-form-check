@@ -39,11 +39,7 @@ dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 | 《国家自然科学基金条例》 | 国务院令第796号 | NF-001, NF-002, NF-003, NF-004, NF-005, NF-006, NF-007, NF-008, NF-009, NF-010, NF-011, NF-012, NF-013, NF-014, NF-015 |
 | 《2026 年度国家自然科学基金项目指南·申请规定》 | 2026 年度（逐年更新） | NF-014, NF-015 |
 
-**Boundary:** this plugin checks an **NSFC proposal's text and electronic document properties** and
-reports the identity clues it finds, alongside the length and form-review items a deployment
-configures. It is not `dsh-rulefile-check` (which audits the legality of a regulatory document), not
-`dsh-policy-brief-draft` (which drafts a policy explainer), and not `dsh-review-reply-check` (which
-tracks reviewer comments). It reads one proposal and reports literal matches against cited clauses.
+**边界（中文译文，以英文原文为准）：** 本插件核对**国家自然科学基金申请书的文本与电子文档属性**，并报出它发现的身份线索，以及部署方配置的篇幅与形式审查项。它不是 `dsh-rulefile-check`（后者审查规范性文件的合法性），不是 `dsh-policy-brief-draft`（后者起草政策解读），也不是 `dsh-review-reply-check`（后者跟踪评审意见）。它读取一份申请书，并报出与所引条款之间的字面匹配。
 
 > ### ⚠️ Read this before using the anonymity checks
 >
