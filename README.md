@@ -20,13 +20,17 @@ dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 
 ## What it looks like
 
-![Terminal demo of dsh-nsfc-form-check: real output over its NF-009 fixture](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-hero.png)
+![Workflow diagram for dsh-nsfc-form-check: document → rule pack → findings.](docs/assets/dsh-nsfc-form-check-flow.svg)
 
-![Animated terminal demo of dsh-nsfc-form-check](https://raw.githubusercontent.com/PerryLink/dsh-nsfc-form-check/main/docs/assets/dsh-nsfc-form-check-demo.gif)
+*Workflow overview: document → rule pack → findings. The examples below use the real command surface.*
 
-Real output from this plugin over its own `NF-009` test fixture — not a mock-up. The rule pack ships no invented quotations, so a finding names both the clause it applied and the fact that the clause text was not obtained.
+
 
 ## What it answers
+
+### Examples
+
+The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
 | You ask | What it answers |
 |---|---|
