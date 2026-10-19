@@ -8,6 +8,7 @@ dsh plugin --profile <name> add dsh-nsfc-form-check
 
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-nsfc-form-check?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-nsfc-form-check?ref=badge)
 
 `dsh-nsfc-form-check` lee una solicitud al NSFC —sus líneas de texto, las propiedades electrónicas del documento y el listado de términos de identidad de la propia institución— y contrasta ese material con un paquete de reglas versionado: si hay un listado configurado, en qué líneas del cuerpo y dentro de qué rango de líneas configurado aparecen los términos de solicitante, institución y director que usted configuró, qué llevan las propiedades de título, autor, empresa y última modificación, si el material cabe en el límite de extensión que fijó el despliegue, si están presentes los elementos de revisión formal y la declaración de solicitud repetida que usted configuró, si el nombre del director está cumplimentado como exigen las guías anuales, y si aparece algún término clasificado o sensible configurado. Cada hallazgo nombra la cláusula de la que procede e indica si esa cláusula es un requisito directo, un principio o una configuración local, y toda comprobación que no pudo ejecutarse figura en `skipped` con su motivo.
 

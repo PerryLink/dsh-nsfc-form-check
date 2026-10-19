@@ -8,6 +8,7 @@ dsh plugin --profile <name> add dsh-nsfc-form-check
 
 
 [![DSH Market](https://raw.githubusercontent.com/2BingLing/dsh-market/master/assets/readme/badge-listed-en.svg)](https://dsh.market/)
+[![dshfind](https://dshfind.com/api/badge/PerryLink/dsh-nsfc-form-check?metric=downloads)](https://dshfind.com/en/plugins/PerryLink/dsh-nsfc-form-check?ref=badge)
 
 `dsh-nsfc-form-check` reads one NSFC proposal — its body lines, its electronic document properties, and the institution's own roster of identity terms — and checks that material against a versioned rule pack: whether a roster is configured at all, where the configured applicant, institution and advisor terms occur in the body and inside a configured line range, what the title, author, company and last-modified-by properties carry, whether the material fits the length limit the deployment set, whether the configured form-review items and duplicate-application disclosure are present, whether the advisor's name has been filled in as the yearly guidelines require, and whether any configured classified or sensitive term appears. Every finding names the clause it came from, states whether that clause is a direct requirement, a principle or a local configuration, and every check that could not run is listed in `skipped` with its reason.
 
