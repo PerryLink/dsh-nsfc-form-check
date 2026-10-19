@@ -30,6 +30,31 @@ dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 下表是示例集：第一行是详细走查，其余行是简短案例。
 
 
+#### 详细输出
+
+**工具** `nsfc_form_check`
+
+**输入**
+
+~~~json
+{"text":"申请代码：H0301\n项目名称：某信号通路在疾病进展中的作用机制研究","metadata":{},"roster":{"authorNames":[],"institutionNames":[],"advisorNames":[],"allowList":[]}}
+~~~
+ 
+**输出**
+
+~~~json
+{
+  "id": "dsh-nsfc-form-check.NF-001.811c9dc5",
+  "ruleId": "NF-001",
+  "severity": "warn",
+  "locator": {},
+  "found": "未配置任何可核验的身份词（申请人姓名、依托单位名称、导师姓名均为空）",
+  "expected": "匿名检查需要名单才能执行；未配置时其余匿名相关检查只能逐条报为未执行"
+}
+~~~
+
+*来源 `dsh-nsfc-form-check/tests/fixtures/NF-001/NF-001-unsafe.json`*
+
 | 你会问 | 它怎么答 |
 |---|---|
 | 申请人姓名名单没填，匿名检查是不是就直接通过了？ | 不是。`authorNames`、`institutionNames`、`advisorNames` 三项都为空时，最先报出的就是 `NF-001`，其余需要名单的匿名检查逐条以 `skipped` 连同原因列出。所以发现列表为空永远不等于没有问题——下结论前先看 `NF-001` 与 `skipped` 条目。 |

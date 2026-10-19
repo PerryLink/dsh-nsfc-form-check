@@ -35,6 +35,31 @@ Saída real deste plugin sobre o seu próprio fixture de teste `NF-009` — não
 A tabela abaixo é o conjunto de exemplos: a primeira linha é o caso detalhado e as demais são casos curtos.
 
 
+#### Saída detalhada
+
+**Ferramenta** `nsfc_form_check`
+
+**Entrada**
+
+~~~json
+{"text":"申请代码：H0301\n项目名称：某信号通路在疾病进展中的作用机制研究","metadata":{},"roster":{"authorNames":[],"institutionNames":[],"advisorNames":[],"allowList":[]}}
+~~~
+ 
+**Saída**
+
+~~~json
+{
+  "id": "dsh-nsfc-form-check.NF-001.811c9dc5",
+  "ruleId": "NF-001",
+  "severity": "warn",
+  "locator": {},
+  "found": "未配置任何可核验的身份词（申请人姓名、依托单位名称、导师姓名均为空）",
+  "expected": "匿名检查需要名单才能执行；未配置时其余匿名相关检查只能逐条报为未执行"
+}
+~~~
+
+*Observado em `dsh-nsfc-form-check/tests/fixtures/NF-001/NF-001-unsafe.json`*
+
 | Você pergunta | O que ele responde |
 |---|---|
 | Ninguém preencheu a lista de nomes de requerentes. A verificação de identidade passa sem mais? | Não. `NF-001` é a primeira coisa reportada quando `authorNames`, `institutionNames` e `advisorNames` estão vazios, e cada verificação de identidade que precisa desses termos consta em `skipped` com o seu motivo. Uma lista de constatações vazia nunca significa que nada estava errado — leia `NF-001` e as entradas de `skipped` antes de tirar qualquer conclusão. |

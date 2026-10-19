@@ -33,6 +33,31 @@ dsh --profile <name> --dump-config | grep 'dsh-nsfc-form-check'
 
 The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
+#### Detailed output
+
+**Tool** `nsfc_form_check`
+
+**Input**
+
+~~~json
+{"text":"申请代码：H0301\n项目名称：某信号通路在疾病进展中的作用机制研究","metadata":{},"roster":{"authorNames":[],"institutionNames":[],"advisorNames":[],"allowList":[]}}
+~~~
+ 
+**Output**
+
+~~~json
+{
+  "id": "dsh-nsfc-form-check.NF-001.811c9dc5",
+  "ruleId": "NF-001",
+  "severity": "warn",
+  "locator": {},
+  "found": "未配置任何可核验的身份词（申请人姓名、依托单位名称、导师姓名均为空）",
+  "expected": "匿名检查需要名单才能执行；未配置时其余匿名相关检查只能逐条报为未执行"
+}
+~~~
+
+*Observed from `dsh-nsfc-form-check/tests/fixtures/NF-001/NF-001-unsafe.json`*
+
 | You ask | What it answers |
 |---|---|
 | Nobody filled in the applicant name list. Does the identity checking just pass? | No. `NF-001` is the first thing reported when `authorNames`, `institutionNames` and `advisorNames` are all empty, and every identity check that needs those terms reports itself in `skipped` with its reason. An empty finding list therefore never means nothing was wrong — read `NF-001` and the `skipped` entries before drawing any conclusion. |
