@@ -26,7 +26,10 @@
     "rules",
     "CHANGELOG.md",
     "SECURITY.md",
-    "docs/assets/*"
+    "docs/assets/*",
+    "samples",
+    "TROUBLESHOOTING.md",
+    "screenshots.json"
   ],
   "scripts": {
     "build": "tsdown",
@@ -43,6 +46,18 @@
     "manifestVersion": 1,
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "demo": {
+      "sample": "samples/quickstart/input/NF-002-unsafe.json",
+      "prompt": "用自带样例跑一次基金申请书形式审查，告诉我发现了几条问题、有多少条检查未执行。",
+      "expect": "samples/quickstart/expected/result.json",
+      "screenshot": "docs/assets/quickstart.png",
+      "reads": [
+        "申请书材料（.json）"
+      ],
+      "writes": [],
+      "network": false,
+      "external": []
     }
   },
   "keywords": [
