@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-dark.svg">
-  <img src="docs/assets/dsh-nsfc-form-check-flow-light.svg" width="100%" alt="Flujo de dsh-nsfc-form-check: solicitud → líneas de texto y propiedades del documento → rules/nsfc-form-check.yaml → hallazgos y skipped">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-nsfc-form-check-hero-en-light.webp" width="100%" alt="dsh-nsfc-form-check: revisión de formularios de propuestas NSFC — líneas del cuerpo y propiedades del documento, con listas de hallazgos y skipped">
 </picture>
 
 # dsh-nsfc-form-check
@@ -47,6 +47,11 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
                                 ▲
                                 └── rules/nsfc-form-check.yaml (NF-001…NF-015)
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-nsfc-form-check-flow-v5-light.svg" width="100%" alt="Estructura de dsh-nsfc-form-check: líneas del cuerpo + propiedades del documento → compuerta de listas y tres pistas de reglas (NF-001…NF-015) → listas issues / skipped">
+</picture>
 
 ## Instalación en tres pasos
 

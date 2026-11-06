@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-dark.svg">
-  <img src="docs/assets/dsh-nsfc-form-check-flow-light.svg" width="100%" alt="dsh-nsfc-form-check pipeline: proposal → body lines and document properties → rules/nsfc-form-check.yaml → findings and skipped">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-nsfc-form-check-hero-en-light.webp" width="100%" alt="dsh-nsfc-form-check: NSFC proposal form review — body lines and document properties, producing findings and skipped lists">
 </picture>
 
 # dsh-nsfc-form-check
@@ -47,6 +47,11 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
                                 ▲
                                 └── rules/nsfc-form-check.yaml (NF-001…NF-015)
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-nsfc-form-check-flow-v5-light.svg" width="100%" alt="dsh-nsfc-form-check structure: body lines + document properties → roster gate and three rule tracks (NF-001…NF-015) → issues / skipped lists">
+</picture>
 
 ## Three-step setup
 

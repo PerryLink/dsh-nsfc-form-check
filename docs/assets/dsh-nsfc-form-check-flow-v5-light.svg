@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="660" viewBox="0 0 1100 660" role="img" aria-label="dsh-nsfc-form-check structure: body lines and document properties through a roster gate and three rule tracks into issues and skipped">
+<title>dsh-nsfc-form-check: two channels, three rule tracks, two lists</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f9f6fd"/><stop offset="1" stop-color="#e4eaf8"/></linearGradient>
+<radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4B67B4" stop-opacity="0.13"/><stop offset="1" stop-color="#4B67B4" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1.4" cy="1.4" r="1.4" fill="#8b94ad"/></pattern>
+<filter id="soft" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1f2a50" flood-opacity="0.10"/></filter>
+</defs>
+<rect x="0" y="0" width="1100" height="660" rx="22" fill="url(#bg)"/>
+<rect x="0" y="0" width="1100" height="660" rx="22" fill="url(#dots)" opacity="0.3"/>
+<circle cx="1000" cy="60" r="330" fill="url(#glow)"/>
+<circle cx="70" cy="630" r="250" fill="url(#glow)" opacity="0.6"/>
+<text x="44" y="52" font-size="14.5" fill="#4B67B4" font-weight="700" font-family="'Consolas','SFMono-Regular','Menlo',monospace" letter-spacing="1.6">DSH-NSFC-FORM-CHECK · RULESET 2026.1 · 15 RULES</text>
+<text x="44" y="94" font-size="32" fill="#1b2340" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">Two channels in. Two lists out.</text>
+<text x="44" y="122" font-size="16" fill="#5f6884" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">Body lines and document properties on three rule tracks; every check that could not run is named in skipped.</text>
+<line x1="44" y1="140" x2="1056" y2="140" stroke="#d9deee" stroke-width="1" stroke-linecap="round"/>
+<rect x="44" y="154" width="704" height="60" rx="14" fill="#eef1fb" stroke="#4B67B4" stroke-width="1.4" stroke-dasharray="7 5" opacity="0.95" filter="url(#soft)"/>
+<rect x="60" y="172" width="46" height="20" rx="6" fill="#4B67B4"/>
+<text x="83" y="186.5" font-size="11.5" fill="#ffffff" font-weight="700" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">GATE</text>
+<text x="118" y="180" font-size="15.5" fill="#33477f" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">INSTITUTION ROSTER · NF-001</text>
+<text x="118" y="201" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">author / institution / advisor / allowList</text>
+<text x="730" y="180" font-size="14" fill="#B45309" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">empty roster → warn</text>
+<text x="730" y="201" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">dependents → skipped</text>
+<path d="M396 214 V230" fill="none" stroke="#4B67B4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
+<path d="M391 222 L396 230 L401 222" fill="none" stroke="#4B67B4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="44" y="232" width="272" height="328" rx="18" fill="#ffffff" stroke="#d9deee" stroke-width="1.2" filter="url(#soft)"/>
+<rect x="60" y="246" width="28" height="28" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/>
+<line x1="68" y1="254" x2="82" y2="254" stroke="#4B67B4" stroke-width="2" stroke-linecap="round"/>
+<line x1="68" y1="260" x2="78" y2="260" stroke="#4B67B4" stroke-width="2" stroke-linecap="round"/>
+<line x1="68" y1="266" x2="82" y2="266" stroke="#4B67B4" stroke-width="2" stroke-linecap="round"/>
+<text x="98" y="265" font-size="17" fill="#1b2340" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">MATERIAL</text>
+<rect x="224" y="248" width="84" height="22" rx="7" fill="#eef1fb" stroke="#d9deee" stroke-width="1"/>
+<text x="266" y="263.5" font-size="14" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">parse.ts</text>
+<text x="60" y="292" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">.docx/.json/.txt/.md/.yaml</text>
+<line x1="60" y1="302" x2="300" y2="302" stroke="#d9deee" stroke-width="1" stroke-linecap="round"/>
+<text x="60" y="326" font-size="17" fill="#33477f" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">BODY LINES</text>
+<text x="300" y="326" font-size="14" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">lines[]</text>
+<text x="78" y="350" font-size="12" fill="#8b94ad" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">01</text>
+<rect x="88" y="342.5" width="154" height="7" rx="3.5" fill="#c8cfe4"/>
+<text x="78" y="364" font-size="12" fill="#8b94ad" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">02</text>
+<rect x="88" y="356.5" width="116" height="7" rx="3.5" fill="#c8cfe4"/>
+<rect x="54" y="365" width="246" height="20" rx="6" fill="#fdf3e5"/>
+<text x="78" y="378" font-size="12" fill="#B45309" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">03</text>
+<rect x="88" y="370.5" width="94" height="7" rx="3.5" fill="#c8cfe4"/>
+<rect x="188" y="365" width="54" height="18" rx="9" fill="#fdf3e5" stroke="#B45309" stroke-width="1"/>
+<text x="215" y="377.5" font-size="11" fill="#B45309" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">term</text>
+<text x="78" y="392" font-size="12" fill="#8b94ad" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">04</text>
+<rect x="88" y="384.5" width="172" height="7" rx="3.5" fill="#c8cfe4"/>
+<text x="60" y="408" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">line by line · locator.line</text>
+<line x1="60" y1="420" x2="300" y2="420" stroke="#d9deee" stroke-width="1" stroke-linecap="round"/>
+<text x="60" y="434" font-size="17" fill="#7A63B0" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">PROPERTIES</text>
+<text x="300" y="434" font-size="14" fill="#7A63B0" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">metadata</text>
+<text x="60" y="458" font-size="16.5" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">title</text>
+<rect x="232" y="450" width="68" height="8" rx="4" fill="#c8cfe4"/>
+<rect x="54" y="468" width="246" height="19" rx="5" fill="#fdf3e5"/>
+<text x="60" y="480" font-size="16.5" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">author</text>
+<rect x="232" y="472" width="68" height="8" rx="4" fill="#c8cfe4"/>
+<rect x="54" y="490" width="246" height="19" rx="5" fill="#f4f1fb"/>
+<text x="60" y="502" font-size="16.5" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">company</text>
+<rect x="232" y="494" width="68" height="8" rx="4" fill="#c8cfe4"/>
+<text x="60" y="524" font-size="16.5" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">lastModifiedBy</text>
+<rect x="232" y="516" width="68" height="8" rx="4" fill="#c8cfe4"/>
+<text x="60" y="544" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">field by field · locator.column</text>
+<rect x="328" y="232" width="432" height="328" rx="18" fill="#ffffff" stroke="#d9deee" stroke-width="1.2" filter="url(#soft)"/>
+<text x="348" y="262" font-size="17" fill="#1b2340" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">CHECK CORE</text>
+<text x="348" y="282" font-size="14" fill="#8b94ad" font-family="'Consolas','SFMono-Regular','Menlo',monospace">check.ts</text>
+<text x="740" y="262" font-size="14" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">15 rules</text>
+<text x="740" y="282" font-size="14" fill="#8b94ad" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="end">NF-001 … NF-015</text>
+<line x1="348" y1="292" x2="740" y2="292" stroke="#d9deee" stroke-width="1" stroke-linecap="round"/>
+<rect x="344" y="300" width="400" height="82" rx="13" fill="#f2f5fc" stroke="#d9deee" stroke-width="1.1"/>
+<rect x="352" y="312" width="4" height="58" rx="2" fill="#4B67B4"/>
+<text x="368" y="324" font-size="17" fill="#1b2340" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">BODY · IDENTITY</text>
+<rect x="663.2" y="308" width="76.8" height="22" rx="7" fill="#eef1fb" stroke="#d9deee" stroke-width="1"/>
+<text x="701.6" y="323.5" font-size="14" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">lines[]</text>
+<text x="368" y="344" font-size="14" fill="#5f6884" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">line literal match; NF-014 asks for presence</text>
+<rect x="368" y="352" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="402" y="369.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-002</text>
+<rect x="443" y="352" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="477" y="369.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-003</text>
+<rect x="518" y="352" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="552" y="369.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-004</text>
+<rect x="593" y="352" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="627" y="369.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-013</text>
+<rect x="668" y="352" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="702" y="369.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-014</text>
+<rect x="344" y="390" width="400" height="82" rx="13" fill="#f2f5fc" stroke="#d9deee" stroke-width="1.1"/>
+<rect x="352" y="402" width="4" height="58" rx="2" fill="#4B67B4"/>
+<text x="368" y="414" font-size="17" fill="#1b2340" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">POLICY · SCOPE</text>
+<rect x="587.6" y="398" width="152.4" height="22" rx="7" fill="#eef1fb" stroke="#d9deee" stroke-width="1"/>
+<text x="663.8" y="413.5" font-size="14" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">lines[] + params</text>
+<text x="368" y="434" font-size="14" fill="#5f6884" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">windows · limits · items · disclosure · terms</text>
+<rect x="368" y="442" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="402" y="459.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-009</text>
+<rect x="443" y="442" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="477" y="459.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-010</text>
+<rect x="518" y="442" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="552" y="459.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-011</text>
+<rect x="593" y="442" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="627" y="459.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-012</text>
+<rect x="668" y="442" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="702" y="459.94" font-size="16.5" fill="#4B67B4" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-015</text>
+<rect x="344" y="480" width="400" height="82" rx="13" fill="#f6f3fc" stroke="#d9deee" stroke-width="1.1"/>
+<rect x="352" y="492" width="4" height="58" rx="2" fill="#7A63B0"/>
+<text x="368" y="504" font-size="17" fill="#1b2340" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">PROPERTIES · IDENTITY</text>
+<rect x="654.8" y="488" width="85.2" height="22" rx="7" fill="#eef1fb" stroke="#d9deee" stroke-width="1"/>
+<text x="697.4" y="503.5" font-size="14" fill="#7A63B0" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">metadata</text>
+<text x="368" y="524" font-size="14" fill="#5f6884" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">field-level match; one entry per property</text>
+<rect x="368" y="532" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="402" y="549.94" font-size="16.5" fill="#7A63B0" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-005</text>
+<rect x="443" y="532" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="477" y="549.94" font-size="16.5" fill="#7A63B0" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-006</text>
+<rect x="518" y="532" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="552" y="549.94" font-size="16.5" fill="#7A63B0" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-007</text>
+<rect x="593" y="532" width="68" height="24" rx="8" fill="#eef1fb" stroke="#d9deee" stroke-width="1.1"/><text x="627" y="549.94" font-size="16.5" fill="#7A63B0" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">NF-008</text>
+<path d="M316 352 H326 V341 H340" fill="none" stroke="#4B67B4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M332 336 L340 341 L332 346" fill="none" stroke="#4B67B4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M326 352 V431 H340" fill="none" stroke="#4B67B4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M332 426 L340 431 L332 436" fill="none" stroke="#4B67B4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M316 493 C332 493 330 520 340 520" fill="none" stroke="#7A63B0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M332 515 L340 520 L332 525" fill="none" stroke="#7A63B0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="784" y="232" width="272" height="156" rx="18" fill="#ffffff" stroke="#d9deee" stroke-width="1.2" filter="url(#soft)"/>
+<text x="802" y="260" font-size="17" fill="#4B67B4" font-weight="700" font-family="'Consolas','SFMono-Regular','Menlo',monospace">ISSUES[]</text>
+<text x="802" y="280" font-size="14" fill="#5f6884" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">one entry per difference</text>
+<line x1="802" y1="290" x2="1038" y2="290" stroke="#d9deee" stroke-width="1" stroke-linecap="round"/>
+<circle cx="806" cy="306" r="3.6" fill="#B42318"/>
+<text x="815" y="311" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">error</text>
+<circle cx="876" cy="306" r="3.6" fill="#B45309"/>
+<text x="885" y="311" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">warn</text>
+<circle cx="938" cy="306" r="3.6" fill="#3B6EA5"/>
+<text x="947" y="311" font-size="14" fill="#5f6884" font-family="'Consolas','SFMono-Regular','Menlo',monospace">info</text>
+<circle cx="806" cy="330" r="3.6" fill="#B45309"/>
+<text x="816" y="335" font-size="15" fill="#1b2340" font-family="'Consolas','SFMono-Regular','Menlo',monospace">NF-002 · line 04</text>
+<circle cx="806" cy="352" r="3.6" fill="#3B6EA5"/>
+<text x="816" y="357" font-size="15" fill="#1b2340" font-family="'Consolas','SFMono-Regular','Menlo',monospace">NF-006 · author</text>
+<text x="802" y="376" font-size="14" fill="#8b94ad" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">each names its clause &amp; kind</text>
+<rect x="784" y="396" width="272" height="164" rx="18" fill="#ffffff" stroke="#d9deee" stroke-width="1.2" stroke-dasharray="5 4" filter="url(#soft)"/>
+<text x="802" y="424" font-size="17" fill="#5f6884" font-weight="700" font-family="'Consolas','SFMono-Regular','Menlo',monospace">SKIPPED[]</text>
+<text x="802" y="444" font-size="14" fill="#5f6884" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">one reason per rule</text>
+<line x1="802" y1="454" x2="1038" y2="454" stroke="#d9deee" stroke-width="1" stroke-linecap="round"/>
+<circle cx="806" cy="474" r="3.6" fill="#8b94ad"/>
+<text x="816" y="479" font-size="15" fill="#1b2340" font-family="'Consolas','SFMono-Regular','Menlo',monospace">NF-010 · maxLines unset</text>
+<circle cx="806" cy="496" r="3.6" fill="#8b94ad"/>
+<text x="816" y="501" font-size="15" fill="#1b2340" font-family="'Consolas','SFMono-Regular','Menlo',monospace">NF-015 · secretTerms unset</text>
+<text x="802" y="524" font-size="14" fill="#8b94ad" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">disabled · unmet · no diff</text>
+<text x="802" y="546" font-size="16" fill="#B45309" font-weight="700" font-family="'Microsoft YaHei','PingFang SC','Noto Sans CJK SC','Segoe UI',sans-serif">empty issues ≠ a pass</text>
+<text x="784" y="578" font-size="14" fill="#8b94ad" font-family="'Consolas','SFMono-Regular','Menlo',monospace">view.ts → markdown · reportJson</text>
+<path d="M744 341 H768 V520 H780" fill="none" stroke="#5f6884" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M768 341 H780" fill="none" stroke="#5f6884" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M774 336 L782 341 L774 346" fill="none" stroke="#5f6884" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M774 515 L782 520 L774 525" fill="none" stroke="#5f6884" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="44" y="588" width="1012" height="44" rx="14" fill="#eef1fb" stroke="#d9deee" stroke-width="1.2"/>
+<text x="64" y="616" font-size="14" fill="#33477f" font-weight="700" font-family="'Consolas','SFMono-Regular','Menlo',monospace">BASIS KIND → SEVERITY CAP</text>
+<rect x="300" y="598" width="140" height="24" rx="7" fill="#ffffff" stroke="#d9deee" stroke-width="1"/>
+<text x="370" y="614" font-size="14" fill="#1b2340" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">direct ≤ error</text>
+<rect x="452" y="598" width="254" height="24" rx="7" fill="#ffffff" stroke="#d9deee" stroke-width="1"/>
+<text x="579" y="614" font-size="14" fill="#B45309" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">derived-from-principle ≤ warn</text>
+<rect x="718" y="598" width="306" height="24" rx="7" fill="#ffffff" stroke="#d9deee" stroke-width="1"/>
+<text x="871" y="614" font-size="14" fill="#3B6EA5" font-family="'Consolas','SFMono-Regular','Menlo',monospace" text-anchor="middle">institutional-configuration ≤ info</text>
+</svg>

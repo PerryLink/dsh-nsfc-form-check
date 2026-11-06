@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-dark.svg">
-  <img src="docs/assets/dsh-nsfc-form-check-flow-light.svg" width="100%" alt="dsh-nsfc-form-check प्रवाह: आवेदन → मुख्य पाठ और दस्तावेज़-गुण → rules/nsfc-form-check.yaml → निष्कर्ष और skipped">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-hero-en-dark.webp">
+  <img src="docs/assets/dsh-nsfc-form-check-hero-en-light.webp" width="100%" alt="dsh-nsfc-form-check: NSFC प्रस्ताव फ़ॉर्म समीक्षा — मुख्य पाठ की पंक्तियाँ और दस्तावेज़ गुण, निष्कर्ष और skipped सूचियाँ">
 </picture>
 
 # dsh-nsfc-form-check
@@ -47,6 +47,11 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
                                 ▲
                                 └── rules/nsfc-form-check.yaml (NF-001…NF-015)
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-nsfc-form-check-flow-v5-light.svg" width="100%" alt="dsh-nsfc-form-check संरचना: मुख्य पाठ की पंक्तियाँ + दस्तावेज़ गुण → रोस्टर गेट और तीन नियम ट्रैक (NF-001…NF-015) → issues / skipped सूचियाँ">
+</picture>
 
 ## तीन चरणों में शुरुआत
 

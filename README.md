@@ -1,8 +1,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-dark.svg">
-  <img src="docs/assets/dsh-nsfc-form-check-flow-light.svg" width="100%" alt="dsh-nsfc-form-check 数据流：申请书 → 正文与文档属性 → rules/nsfc-form-check.yaml → 发现与 skipped">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-hero-zh-dark.webp">
+  <img src="docs/assets/dsh-nsfc-form-check-hero-zh-light.webp" width="100%" alt="dsh-nsfc-form-check：国自然申请书形式审查——正文逐行、属性逐字段，读出发现与 skipped 两份清单">
 </picture>
 
 # dsh-nsfc-form-check
@@ -47,6 +47,11 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
                                 ▲
                                 └── rules/nsfc-form-check.yaml (NF-001…NF-015)
 ```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/dsh-nsfc-form-check-flow-v5-dark.svg">
+  <img src="docs/assets/dsh-nsfc-form-check-flow-v5-light.svg" width="100%" alt="dsh-nsfc-form-check 结构：正文行与文档属性双通道 → 名单闸门与三轨规则（NF-001…NF-015）→ issues / skipped 两份清单">
+</picture>
 
 ## 三步上手
 
