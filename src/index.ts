@@ -7,6 +7,7 @@ import { Config } from './config.ts'
 import type { Config as ConfigShape } from './config.ts'
 import { runCheck, type Roster } from './check.ts'
 import { MaterialError, parseMaterial, type MaterialSource } from './parse.ts'
+import type { DocumentMetadata } from './model.ts'
 import { buildView } from './view.ts'
 import { loadRulesetFile } from './shared/memo.ts'
 
@@ -49,6 +50,38 @@ export function resolvePackageFile(relative: string): string {
     if (existsSync(fromCwd)) return fromCwd
   }
   throw new Error(`规则库文件未找到：${relative}；已尝试 ${tried.length} 个位置，最近一处为 ${tried[0] ?? ''}`)
+}
+
+/** Labels that are document-software defaults, not a person's name. */
+const GENERIC_AUTHOR_LABELS = new Set([
+  'administrator',
+  'admin',
+  'user',
+  'author',
+  'unknown',
+  'microsoft office user',
+  'wps',
+])
+
+/**
+ * Candidate applicant names from a document's own properties.
+ *
+ * The author and last-modified-by properties are the two places a Word file
+ * leaks a person's name. They are candidates, not confirmed identities: a name
+ * is only used to scan the body, and the report still says which property it
+ * came from. Generic software defaults are dropped so they do not become
+ * meaningless body-search terms.
+ */
+export function inferAuthorNames(metadata: Pick<DocumentMetadata, 'author' | 'lastModifiedBy'>): string[] {
+  const values = [metadata.author, metadata.lastModifiedBy]
+  const out: string[] = []
+  for (const value of values) {
+    if (typeof value !== 'string') continue
+    const name = value.trim()
+    if (name === '' || GENERIC_AUTHOR_LABELS.has(name.toLowerCase())) continue
+    if (!out.includes(name)) out.push(name)
+  }
+  return out
 }
 
 /** Build the roster from configuration plus any per-call additions. */
@@ -123,6 +156,10 @@ export function apply(ctx: Context, config: ConfigShape): () => void {
           type: 'array',
           items: { type: 'string' },
           description: '本次调用追加的申请人姓名，会与配置中的名单合并。',
+        },
+        inferNamesFromMetadata: {
+          type: 'boolean',
+          description: '当文档属性含作者/最后修改者时，把它们作为申请人姓名候选扫描正文。默认 true；设为 false 关闭。',
         },
         institutionNames: {
           type: 'array',
@@ -201,7 +238,10 @@ export function apply(ctx: Context, config: ConfigShape): () => void {
           onlyRules: only,
           skipNotes: config.skipNotes === '' ? undefined : config.skipNotes,
           roster: rosterFrom(config, {
-            authorNames: (args.authorNames ?? []) as string[],
+            authorNames: [
+              ...((args.authorNames ?? []) as string[]),
+              ...(args.inferNamesFromMetadata === false ? [] : inferAuthorNames(input.metadata)),
+            ],
             institutionNames: (args.institutionNames ?? []) as string[],
             advisorNames: (args.advisorNames ?? []) as string[],
             allowList: (args.allowList ?? []) as string[],

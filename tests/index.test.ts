@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest'
 import { loadRuleset } from '../src/shared/ruleset.ts'
 import { MaterialError, parseMaterial, textFromDocumentXml } from '../src/parse.ts'
 import { runCheck, type Roster } from '../src/check.ts'
-import { rosterFrom } from '../src/index.ts'
+import { inferAuthorNames, rosterFrom } from '../src/index.ts'
 import { buildView } from '../src/view.ts'
 import { findForbiddenWording } from '../src/shared/wording.ts'
 import { addDays, diffDays, parseWallClock } from '../src/shared/datetime.ts'
@@ -400,5 +400,17 @@ describe('shared kit', () => {
   it('reads the supported YAML subset and rejects the rest', () => {
     expect(parseYaml('a: 1\nb:\n  - x\n')).toEqual({ a: 1, b: ['x'] })
     expect(() => parseYaml('a: 1\na: 2\n')).toThrow(/duplicate/)
+  })
+})
+
+
+describe('metadata author inference', () => {
+  it('uses a real author/last-modified-by pair as candidate names', () => {
+    expect(inferAuthorNames({ author: '张伟', lastModifiedBy: '李娜' })).toEqual(['张伟', '李娜'])
+  })
+
+  it('drops software defaults and de-duplicates', () => {
+    expect(inferAuthorNames({ author: 'Administrator', lastModifiedBy: '张伟' })).toEqual(['张伟'])
+    expect(inferAuthorNames({ author: '张伟', lastModifiedBy: '张伟' })).toEqual(['张伟'])
   })
 })
