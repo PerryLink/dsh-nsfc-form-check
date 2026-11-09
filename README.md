@@ -1,6 +1,6 @@
 # dsh-nsfc-form-check — NSFC proposal form review and identity-clue prompting against the institution's own roster
 
-[English](README.md) · [简体中文](README-zh.md) · [Español](README-es.md) · [Português](README-pt.md) · [हिन्दी](README-hi.md)
+[English](README.md) · [简体中文](README-zh.md)
 
 ```sh
 dsh plugin --profile <name> add dsh-nsfc-form-check
