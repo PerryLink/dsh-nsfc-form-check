@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "tier": "L2-document",
+  "input_formats": [
+    "docx",
+    "txt",
+    "md",
+    "json"
+  ],
+  "outputs": [
+    "markdown",
+    "json"
+  ],
+  "rules": {
+    "total": 15
+  },
+  "limits": [
+    "有 docx 正文/属性入口；无真实申请书 P/R",
+    "名单仍可按机构配置覆盖"
+  ]
+}
