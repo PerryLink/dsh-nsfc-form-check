@@ -131,6 +131,10 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
 
 ### Examples
 
+![dsh-nsfc-form-check: real terminal run](docs/assets/dsh-nsfc-form-check-demo.gif)
+
+*Animated replay of a real run recorded in this repository.*
+
 The table below is the example set: the first row is the detailed walkthrough, the remaining rows are short cases.
 
 #### Detailed output

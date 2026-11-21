@@ -53,6 +53,11 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
   <img src="docs/assets/dsh-nsfc-form-check-flow-v5-light.svg" width="100%" alt="Estructura de dsh-nsfc-form-check: líneas del cuerpo + propiedades del documento → compuerta de listas y tres pistas de reglas (NF-001…NF-015) → listas issues / skipped">
 </picture>
 
+![dsh-nsfc-form-check: ejecución real de terminal](docs/assets/dsh-nsfc-form-check-demo.gif)
+
+*Repetición animada de una ejecución real registrada en este repositorio.*
+
+
 ## Instalación en tres pasos
 
 1. **Instale** (elija un canal):

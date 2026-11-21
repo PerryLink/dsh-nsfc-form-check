@@ -53,6 +53,11 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
   <img src="docs/assets/dsh-nsfc-form-check-flow-v5-light.svg" width="100%" alt="dsh-nsfc-form-check संरचना: मुख्य पाठ की पंक्तियाँ + दस्तावेज़ गुण → रोस्टर गेट और तीन नियम ट्रैक (NF-001…NF-015) → issues / skipped सूचियाँ">
 </picture>
 
+![dsh-nsfc-form-check का असली टर्मिनल रन](docs/assets/dsh-nsfc-form-check-demo.gif)
+
+*इस रिपॉज़िटरी में दर्ज असली रन का एनिमेटेड रीप्ले।*
+
+
 ## तीन चरणों में शुरुआत
 
 1. **इंस्टॉल करें** (एक चैनल चुनें):
