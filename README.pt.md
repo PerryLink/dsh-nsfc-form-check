@@ -11,6 +11,8 @@
 
 Um verificador do DeepSeek Harness para equipes de gestão científica: lê as linhas do corpo e as propriedades eletrônicas do documento, e relata o que está inconsistente, onde e contra qual cláusula — cada achado nomeia sua base e o tipo de base.
 
+Última verificação: DeepSeek Harness `dsh-v0.2.3-alpha.1` (2026-11-22).
+
 [Instalar](#instalação-em-três-passos) · [Configuração](#configuração) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
@@ -56,7 +58,6 @@ proposal.docx ──parse──▶ lines + properties ──check──▶ findi
 ![dsh-nsfc-form-check: execução real de terminal](docs/assets/dsh-nsfc-form-check-demo.gif)
 
 *Repetição animada de uma execução real registrada neste repositório.*
-
 
 ## Instalação em três passos
 

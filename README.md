@@ -11,6 +11,8 @@
 
 面向科研管理人员的 DeepSeek Harness 检查插件：读取正文行与电子文档属性，按本机构名单和版本化规则库报出「哪条、哪行、差什么」，每条发现都标出所依据的条款与依据类型。
 
+最近一次核验：DeepSeek Harness `dsh-v0.2.3-alpha.1`（2026-11-22）。
+
 [安装](#三步上手) · [配置](#配置) · [FAQ](#faq) · [简体中文](README.md) · [English](README.en.md) · [Español](README.es.md) · [Português](README.pt.md) · [हिन्दी](README.hi.md)
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-3366CC?style=flat-square&labelColor=2B3245)](LICENSE)
