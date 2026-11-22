@@ -7,6 +7,8 @@
 
 # dsh-nsfc-form-check
 
+Current version `0.2.15`.
+
 **Turn one NSFC proposal into a line-by-line difference list your research office can act on.**
 
 A DeepSeek Harness checker for research administrators: it reads the body lines and electronic document properties, then reports what is off, where, and against which clause — every finding names its basis and its basis kind.
